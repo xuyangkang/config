@@ -28,3 +28,9 @@
 
 ;; remove trailing whitespace when saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Go autocomplete
+(add-to-list 'load-path "~/.emacs.d/golang/")
+(require 'go-autocomplete)
+(require 'auto-complete-config)
+(ac-config-default)
