@@ -1,2 +1,2 @@
-# emacsrc
-My emacs config
+# Config
+Useful configs
