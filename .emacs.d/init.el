@@ -27,7 +27,7 @@
 ;; multi-term
 (el-get-bundle multi-term)
 (require 'multi-term)
-(setq multi-term-program "/bin/bash")
+(setq multi-term-program "/bin/zsh")
 
 ;; smex
 (el-get-bundle smex)
