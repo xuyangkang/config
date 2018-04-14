@@ -28,6 +28,7 @@
 (el-get-bundle multi-term)
 (require 'multi-term)
 (setq multi-term-program "/bin/zsh")
+(setq multi-term-switch-after-close t)
 
 ;; smex
 (el-get-bundle smex)
@@ -36,6 +37,12 @@
 
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
+;; yasnippet
+(el-get-bundle yasnippet)
+(require 'yasnippet)
+(yas-global-mode 1)
+(el-get-bundle yasnippet-snippets)
 
 ;; use space instead of tab
 (setq-default indent-tabs-mode nil)
@@ -48,6 +55,7 @@
 
 ;; unset visible-bell
 (setq visible-bell nil)
+(setq ring-bell-function 'ignore)
 
 ;; faster window switch
 (el-get-bundle switch-window)
