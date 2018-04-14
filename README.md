@@ -1,25 +1,31 @@
 # Config
 Useful configs for setting up Debian/Ubuntu
 
-## Git
-```
-git config --global user.name "Xuyang Kang"
-git config --global user.email "xuyangkang@gmail.com"
-```
 ## CJK fonts
-See [Google Noto Fonts](https://www.google.com/get/noto/), either install by apt or manually.
+Install [Google Noto Fonts](https://www.google.com/get/noto/) by apt-get
 
-Some kanji appears in both Japanese and Chinese. The default preference is JA > CN. It makes things looks weird sometimes. Need to run:
+Some kanji appear in both Japanese and Chinese. The default preference is JA > CN. Sometimes it looks weird.
 ```
-sudo wget 64-language-selector-prefer.conf /etc/fonts/conf.d/
+sudo wget https://github.com/xuyangkang/config/raw/master/64-language-selector-prefer.conf /etc/fonts/conf.d/
 ```
 ## Nvidia
 ```
 sudo apt-get install bumblebee-nvidia primus
 ```
 ## HiDpi
-cinnamon handles HiDpi properly, except the login screen:
+Cinnamon can handle HiDpi properly, except the login screen:
 ```
 sudo emacs /etc/lightdm/lightdm-gtk-greeter.conf
 ```
-change DPI to 192.
+Change DPI to 192.
+## Git
+```
+git config --global user.name "Xuyang Kang"
+git config --global user.email "xuyangkang@gmail.com"
+git config --global --add merge.ff false
+```
+## Zsh
+```
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+setopt interactivecomments
+```
