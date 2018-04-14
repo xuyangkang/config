@@ -20,8 +20,22 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
 
+;; better-defaults
 (el-get-bundle better-defaults)
 (require 'better-defaults)
+
+;; multi-term
+(el-get-bundle multi-term)
+(require 'multi-term)
+(setq multi-term-program "/bin/bash")
+
+;; smex
+(el-get-bundle smex)
+(require 'smex)
+(smex-initialize)
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;; use space instead of tab
 (setq-default indent-tabs-mode nil)
