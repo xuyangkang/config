@@ -5,9 +5,22 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
+;; el-get
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
+(unless (require 'el-get nil 'noerror)
+  (require 'package)
+  (add-to-list 'package-archives
+               '("melpa" . "http://melpa.org/packages/"))
+  (package-refresh-contents)
+  (package-initialize)
+  (package-install 'el-get)
+  (require 'el-get))
+
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(el-get 'sync)
+
+(el-get-bundle better-defaults)
 (require 'better-defaults)
 
 ;; use space instead of tab
