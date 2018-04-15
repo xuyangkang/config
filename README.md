@@ -30,7 +30,6 @@ Change DPI to 192.
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 setopt interactivecomments
 ```
-Then add emacs to plugins in $HOME/.zshrc
 
 ### Emacs
 #### Client-Server mode
@@ -40,6 +39,9 @@ sudo loginctl enable-linger xuyang
 systemctl --user enable emacs
 systemctl --user start emacs
 ```
+After that, open $HOME/.zshrc and:
+1. Add emacs to plugins
+2. export EMACS=emacs
 
 ### Git
 ```
