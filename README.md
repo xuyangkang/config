@@ -8,7 +8,7 @@ Install [Google Noto Fonts](https://www.google.com/get/noto/) by apt-get
 
 Some kanji appear in both Japanese and Chinese. The default preference is JA > CN. Sometimes it looks weird.
 ```
-sudo wget https://github.com/xuyangkang/config/raw/master/64-language-selector-prefer.conf /etc/fonts/conf.d/
+sudo wget https://github.com/xuyangkang/config/raw/master/64-language-selector-prefer.conf -P /etc/fonts/conf.d/
 ```
 
 ### Nvidia
