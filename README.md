@@ -12,6 +12,12 @@ sudo wget https://github.com/xuyangkang/config/raw/master/64-language-selector-p
 ```
 sudo apt-get install bumblebee-nvidia primus
 ```
+## Emacs
+### Server-Client mode
+```
+wget https://github.com/xuyangkang/config/raw/master/emacs.service $HOME/.config/systemd/user/
+sudo loginctl enable-linger xuyang
+```
 ## HiDpi
 Cinnamon can handle HiDpi properly, except the login screen:
 ```
