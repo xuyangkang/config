@@ -38,6 +38,23 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
+;; company
+(el-get-bundle company-mode)
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+
+;; flycheck
+(el-get-bundle flycheck)
+(global-flycheck-mode)
+
+;; golang
+(el-get-bundle go-mode)
+(require 'go-mode)
+
+;; go-company
+(el-get-bundle go-company)
+(require 'company-go)
+
 ;; yasnippet
 (el-get-bundle yasnippet)
 (require 'yasnippet)
