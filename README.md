@@ -32,14 +32,9 @@ setopt interactivecomments
 ```
 
 ### Emacs
-#### Client-Server mode
-```
-wget https://github.com/xuyangkang/config/raw/master/emacs.service -P $HOME/.config/systemd/user/
-sudo loginctl enable-linger xuyang
-systemctl --user enable emacs
-systemctl --user start emacs
-```
-After that, open $HOME/.zshrc and:
+#### C/S mode
+Add '/usr/bin/emacs --daemon' to start up applications
+#### Work with zsh
 1. Add emacs to plugins
 2. export EMACS=emacs
 
@@ -47,5 +42,4 @@ After that, open $HOME/.zshrc and:
 ```
 git config --global user.name "Xuyang Kang"
 git config --global user.email "xuyangkang@gmail.com"
-git config --global --add merge.ff false
 ```
