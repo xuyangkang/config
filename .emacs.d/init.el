@@ -100,4 +100,4 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; theme
-(load-theme 'wombat)
+(load-theme 'whiteboard)
