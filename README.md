@@ -34,9 +34,20 @@ setopt interactivecomments
 ### Emacs
 #### C/S mode
 Add '/usr/bin/emacs --daemon' to start up applications
+
 #### Work with zsh
 1. Add emacs to plugins
 2. export EMACS=emacs
+
+#### Workaround for terminal 256 colors
+1. tic eterm-256color.ti
+2. Add following hack:
+
+```
+if [[ -n $INSIDE_EMACS ]]; then
+    TERM=eterm-256color
+fi
+```
 
 ### Git
 ```
