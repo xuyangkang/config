@@ -15,50 +15,54 @@
   (package-refresh-contents)
   (package-initialize)
   (package-install 'el-get)
-  (require 'el-get))
+  (require 'el-get)
+  (el-get 'sync))
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-(el-get 'sync)
+
+(el-get-bundle use-package)
 
 ;; better-defaults
 (el-get-bundle better-defaults)
-(require 'better-defaults)
+(use-package better-defaults)
+
+(el-get-bundle xclip)
+(use-package xclip)
+;; (xclip-mode 1)
 
 ;; multi-term
 (el-get-bundle multi-term)
-(require 'multi-term)
-(setq multi-term-program "/bin/zsh")
-(setq multi-term-switch-after-close t)
+(use-package multi-term
+  :config
+  (setq multi-term-program "/bin/zsh")
+  (setq multi-term-switch-after-close t))
 
 ;; smex
 (el-get-bundle smex)
-(require 'smex)
-(smex-initialize)
-
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-
-;; company
-(el-get-bundle company-mode)
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
+(use-package smex
+  :config
+  (global-set-key (kbd "M-x") 'smex)
+  (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+  (smex-initialize))
 
 ;; flycheck
 (el-get-bundle flycheck)
-(global-flycheck-mode)
+(use-package flycheck
+  :config
+  (global-flycheck-mode))
 
 ;; golang
 (el-get-bundle go-mode)
-(require 'go-mode)
-
-;; go-company
-(el-get-bundle go-company)
-(require 'company-go)
+(use-package go-mode
+  :config
+  (add-hook 'before-save-hook 'gofmt-before-save))
 
 ;; yasnippet
 (el-get-bundle yasnippet)
-(require 'yasnippet)
-(yas-global-mode 1)
+(use-package yasnippet
+  :config
+  (yas-global-mode 1))
+
 (el-get-bundle yasnippet-snippets)
 
 ;; use space instead of tab
@@ -100,4 +104,32 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; theme
-(load-theme 'whiteboard)
+(load-theme 'wombat)
+
+(el-get-bundle helm-ag)
+
+(el-get-bundle lsp-mode)
+(el-get-bundle lsp-ui)
+(use-package lsp-mode
+  :config
+  (add-hook 'prog-major-mode #'lsp-prog-major-mode-enable))
+(use-package lsp-ui
+  :config
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+
+(el-get-bundle lsp-go)
+(use-package lsp-go
+  :config
+  (add-hook 'go-mode-hook #'lsp-go-enable))
+
+(el-get-bundle company-mode)
+(use-package company
+  :config
+  (add-hook 'after-init-hook 'global-company-mode))
+
+(el-get-bundle s)
+(use-package s)
+(el-get-bundle tigersoldier/company-lsp)
+(use-package company-lsp
+  :config
+  (push 'company-lsp company-backends))
