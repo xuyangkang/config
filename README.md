@@ -11,11 +11,6 @@ Some kanji appear in both Japanese and Chinese. The default preference is JA > C
 sudo wget https://github.com/xuyangkang/config/raw/master/64-language-selector-prefer.conf -P /etc/fonts/conf.d/
 ```
 
-### Nvidia
-```
-sudo apt-get install bumblebee-nvidia primus
-```
-
 ### HiDpi
 Cinnamon can handle HiDpi properly, except the login screen:
 ```
@@ -28,7 +23,6 @@ Change DPI to 192.
 ### Zsh
 ```
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
-setopt interactivecomments
 ```
 
 ### Emacs
@@ -38,16 +32,6 @@ Add '/usr/bin/emacs --daemon' to start up applications
 #### Work with zsh
 1. Add emacs to plugins
 2. export EMACS=emacs
-
-#### Workaround for terminal 256 colors
-1. tic eterm-256color.ti
-2. Add following hack:
-
-```
-if [[ -n $INSIDE_EMACS ]]; then
-    TERM=eterm-256color
-fi
-```
 
 ### Git
 ```
