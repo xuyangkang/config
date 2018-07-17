@@ -30,13 +30,6 @@
 (use-package xclip)
 ;; (xclip-mode 1)
 
-;; multi-term
-(el-get-bundle multi-term)
-(use-package multi-term
-  :config
-  (setq multi-term-program "/bin/zsh")
-  (setq multi-term-switch-after-close t))
-
 ;; smex
 (el-get-bundle smex)
 (use-package smex
