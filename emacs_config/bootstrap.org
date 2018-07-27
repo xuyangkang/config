@@ -1,0 +1,16 @@
+#+TITLE: Emacs configuration file
+#+AUTHOR: Xuyang Kang
+#+BABEL: :cache yes
+#+PROPERTY: header-args :tangle yes
+
+#+BEGIN_SRC emacs-lisp
+  (defun say-hello ()
+    "test"
+    (interactive)
+    (message "Hello"))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (provide 'bootstrap)
+#+END_SRC
+
