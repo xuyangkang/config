@@ -12,6 +12,17 @@ Useful configs for setting up Debian/Ubuntu
     sudo wget https://github.com/xuyangkang/config/raw/master/64-language-selector-prefer.conf -P /etc/fonts/conf.d/
     #+END_SRC
 
+*** HiDpi
+    Put dotXresources under ~/
+
+
+    #+BEGIN_SRC
+    #To switch to HiDpi external display only
+    xrandr --output eDP-1 --off --output DP-2 --auto --dpi 192
+
+    #To switch to low dpi internal display only
+    xrandr --output eDP-1 --scale 2x2 --dpi 192 --output DP-2 --off
+    #+END_SRC
 ** Coding
 
 *** Zsh
