@@ -13,15 +13,15 @@ Useful configs for setting up Debian/Ubuntu
     #+END_SRC
 
 *** HiDpi
-    Put dotXresources under ~/
-
+    I have a 4K external monitor and a 2K built-in monitor.
+    Put dotXresources under ~/ to tell some apps DPI is 192
 
     #+BEGIN_SRC
     #To switch to HiDpi external display only
-    xrandr --output eDP-1 --off --output DP-2 --auto --dpi 192
+    xrandr --output eDP-1 --off --output DP-2 --auto --dpi 192 --mode 3840x2160 --panning 3840x2160
 
     #To switch to low dpi internal display only
-    xrandr --output eDP-1 --scale 2x2 --dpi 192 --output DP-2 --off
+    xrandr --output eDP-1 --scale 2x2 --mode 1920x1080 --panning 3840x2160 --dpi 192 --output DP-2 --off
     #+END_SRC
 ** Coding
 
