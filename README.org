@@ -1,7 +1,15 @@
 * Config
-Useful configs for setting up Debian/Ubuntu
+Useful configs for setting up Debian/Ubuntu.
+I'm setting up i3 on xubuntu.
 
 ** Looking
+
+*** I3
+    #+BEGIN_SRC
+    sudo apt-get install i3-wm i3block i3status pasystray fcitx-googlepinyin fcitx-mozc
+    cp i3config ~/.config/i3/config
+    cp dotxinitrc ~/.xinitrc
+    #+END_SRC
 
 *** CJK fonts
     Install [Google Noto Fonts](https://www.google.com/get/noto/) by apt-get
@@ -13,14 +21,15 @@ Useful configs for setting up Debian/Ubuntu
     #+END_SRC
 
 *** HiDpi
-    I have a 4K external monitor and a 2K built-in monitor.
+    I have a 4K external monitor and a 2K built-in monitor. These commands works for me.
     Put dotXresources under ~/ to tell some apps DPI is 192
+    TODO: create a simple script to restart i3 and maybe restart all sessions.
 
     #+BEGIN_SRC
-    #To switch to HiDpi external display only
+    #Use HiDpi external display only
     xrandr --output eDP-1 --off --output DP-2 --auto --dpi 192 --mode 3840x2160 --panning 3840x2160
 
-    #To switch to low dpi internal display only
+    #Use low dpi internal display only
     xrandr --output eDP-1 --scale 2x2 --mode 1920x1080 --panning 3840x2160 --dpi 192 --output DP-2 --off
     #+END_SRC
 ** Coding
@@ -38,7 +47,7 @@ Useful configs for setting up Debian/Ubuntu
      cd ~/.emacs.d
      git checkout develop
      #+END_SRC
-**** Work with zsh
+**** Integrate with zsh
      Add emacs to plugins in ~/.zshrc
 
 *** Git
