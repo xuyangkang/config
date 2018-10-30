@@ -1,6 +1,6 @@
 * Config
 Useful configs for setting up Debian/Ubuntu.
-I'm setting up i3 on xubuntu.
+Tested with xubuntu 18.04
 
 ** Looking
 
@@ -34,9 +34,9 @@ I'm setting up i3 on xubuntu.
     #+END_SRC
 ** Coding
 
-*** Zsh
+*** Shell Environment
     #+BEGIN_SRC
-    sudo apt-get install zsh
+    sudo apt-get install zsh tmux
     wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
     #+END_SRC
 
@@ -49,10 +49,10 @@ I'm setting up i3 on xubuntu.
      #+END_SRC
 **** Integrate with zsh
      Add emacs to plugins in ~/.zshrc
+**** TODO: config
 
 *** Git
     #+BEGIN_SRC
     git config --global user.name "Xuyang Kang"
     git config --global user.email "xuyangkang@gmail.com"
     #+END_SRC
-
