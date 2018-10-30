@@ -158,3 +158,5 @@ bar {
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 exec --no-startup-id fcitx
+
+exec --no-startup-id xsetroot -solid "#000000"
