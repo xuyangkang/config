@@ -1,0 +1,38 @@
+* Config
+Useful configs for setting up Debian/Ubuntu
+
+** Looking
+
+*** CJK fonts
+    Install [Google Noto Fonts](https://www.google.com/get/noto/) by apt-get
+    
+    Some kanji appear in both Japanese and Chinese. The default preference is JA > CN. Sometimes it looks weird.
+
+    #+BEGIN_SRC
+    sudo wget https://github.com/xuyangkang/config/raw/master/64-language-selector-prefer.conf -P /etc/fonts/conf.d/
+    #+END_SRC
+
+** Coding
+
+*** Zsh
+    #+BEGIN_SRC
+    sudo apt-get install zsh
+    wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+    #+END_SRC
+
+*** Spacemacs
+**** Install and switch to develop version
+     #+BEGIN_SRC
+     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+     cd ~/.emacs.d
+     git checkout develop
+     #+END_SRC
+**** Work with zsh
+     Add emacs to plugins in ~/.zshrc
+
+*** Git
+    #+BEGIN_SRC
+    git config --global user.name "Xuyang Kang"
+    git config --global user.email "xuyangkang@gmail.com"
+    #+END_SRC
+
